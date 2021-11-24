@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 // 1.) Create a Menu View on the Main Page that displays all of the Items in the Menu.
 //1.1) Items in the Menu should be in a Card Component, it should display the Item Image, Item Price, and Item Name.
 //1.2) Each Card should have 1 button to redirect to the Items Details
@@ -31,6 +33,7 @@
 //5. You are free to use any libraries that might help you in this project, but not required
 
 //6. Grading is 70% functionality, 15% Presentation, 15% Error Trapping(not allowing user to enter negative quantity, not allowing user to input negative cash, not allowing user to add item quantity more than current items stock, etc2)
+
 [
     { id: 1, name: "Bacon", price: 250, quantity: 10, category: ["Meat"], img: 'https://healthyrecipesblogs.com/wp-content/uploads/2018/01/oven-bacon-featured.jpg' },
     { id: 2, name: "Fish", price: 150, quantity: 5, category: ["Seafood", "Fresh"], img: 'https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322522/fresh-fish-on-ice.jpg' },
