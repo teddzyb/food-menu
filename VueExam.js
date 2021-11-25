@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 
-// 1.) Create a Menu View on the Main Page that displays all of the Items in the Menu.
-//1.1) Items in the Menu should be in a Card Component, it should display the Item Image, Item Price, and Item Name.
+// 1.) ✔ Create a Menu View on the Main Page that displays all of the Items in the Menu.
+//1.1) ✔ Items in the Menu should be in a Card Component, it should display the Item Image, Item Price, and Item Name.
 //1.2) Each Card should have 1 button to redirect to the Items Details
 //1.3) Items that have a quantity of 0 should not be displayed here
 
@@ -23,15 +23,10 @@
 
 //Notes:
 //1. The quantity in the items array will not increase or decrease based on orders, it will always remain the same(e.g if beef has 5 quantity and a user buys 2, the quantity/stock in the item array will still stay at 5)
-
 //2. Persistence of Data is not required
-
 //3. Coupon Codes : "menu50"=> provides a 50% discount, "menu20"=> provides a 20% discount, "menu10"=> provides a 10% discount, "menu200flat"=>provides a -200 discount if the total price is more then 1000, if not coupon should not work
-
 //4. You are free to use Global state management or vuex, although not required
-
 //5. You are free to use any libraries that might help you in this project, but not required
-
 //6. Grading is 70% functionality, 15% Presentation, 15% Error Trapping(not allowing user to enter negative quantity, not allowing user to input negative cash, not allowing user to add item quantity more than current items stock, etc2)
 
 [

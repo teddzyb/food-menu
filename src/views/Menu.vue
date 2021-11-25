@@ -1,6 +1,8 @@
 <template>
-  <div class="container pt-5">
-    <Card :key="item.id" v-for="item in items" :item="item" />
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center gy-5">
+      <Card :key="item.id" v-for="item in items" :item="item" />
+    </div>
   </div>
 </template>
 

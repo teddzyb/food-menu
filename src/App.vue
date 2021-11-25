@@ -3,7 +3,7 @@
 </template>
 
 <style>
-div {
+/* div {
   border: 1px solid black;
-}
+} */
 </style>
