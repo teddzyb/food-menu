@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-5">
+  <div class="container py-5">
     <div class="row justify-content-center align-items-center gy-5">
       <Searchbar />
       <Card :key="item.id" v-for="item in available" :item="item" />

@@ -1,9 +1,9 @@
 <template>
-  <div class="container my-5">
-    <div class="card mx-5">
-      <h4 class="card-header">{{ $route.query.n }}</h4>
+  <div class="container py-5">
+    <div class="card border-dark mx-5">
+      <h4 class="card-header bg-dark text-light">{{ $route.query.n }}</h4>
       <div class="container-fluid">
-        <div class="card-body row flex-row-reverse">
+        <div class="card-body row flex-row-reverse m-3">
           <div class="col-md-4">
             <img :src="$route.query.i" class="img-fluid rounded-3" />
           </div>
@@ -22,7 +22,7 @@
                     <h3>
                       <i
                         @click="decrement"
-                        class="bi bi-file-minus-fill text-warning"
+                        class="bi bi-file-minus-fill text-dark"
                       ></i>
                     </h3>
                   </div>
@@ -38,12 +38,12 @@
                     <h3>
                       <i
                         @click="increment"
-                        class="bi bi-file-plus-fill text-warning"
+                        class="bi bi-file-plus-fill text-dark"
                       ></i>
                     </h3>
                   </div>
                   <div class="col-auto">
-                    <button class="btn btn-outline-success">Add to Cart</button>
+                    <button class="btn btn-dark">Add to Cart</button>
                   </div>
                 </div>
               </div>

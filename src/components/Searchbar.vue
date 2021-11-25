@@ -6,11 +6,11 @@
           <input
             v-model="value"
             @input="searchFilter"
-            class="form-control border-warning"
+            class="form-control border-dark"
             type="search"
-            placeholder="Search a product name or category"
+            placeholder="Search an item name or category"
           />
-          <button @click="searchFilter" class="btn btn-warning">Search</button>
+          <button @click="searchFilter" class="btn btn-dark">Search</button>
         </div>
       </div>
     </div>
