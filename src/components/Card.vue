@@ -28,7 +28,6 @@
 </template>
 
 <script>
-// Img, Price, Category, and a short Description, edit the Items Array to add a short Description of the Item
 export default {
   name: "Card",
   props: {

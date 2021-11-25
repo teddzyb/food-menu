@@ -19,24 +19,38 @@
               <div class="col-auto">
                 <div class="col-auto row">
                   <div class="col-auto px-0">
-                    <h3><i class="bi bi-file-minus-fill text-warning"></i></h3>
+                    <h3>
+                      <i
+                        @click="decrement"
+                        class="bi bi-file-minus-fill text-warning"
+                      ></i>
+                    </h3>
                   </div>
                   <div class="col-4">
                     <input
+                      v-model="count"
+                      @input="check()"
                       class="form-control text-center"
-                      type="text"
-                      value="0"
+                      type="number"
                     />
                   </div>
                   <div class="col-auto px-0 me-3">
-                    <h3><i class="bi bi-file-plus-fill text-warning"></i></h3>
+                    <h3>
+                      <i
+                        @click="increment"
+                        class="bi bi-file-plus-fill text-warning"
+                      ></i>
+                    </h3>
                   </div>
                   <div class="col-auto">
-                    <button class="btn btn-warning">Add to Cart</button>
+                    <button class="btn btn-outline-success">Add to Cart</button>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div v-if="countErr != ''" class="text-danger mt-2">
+            {{ countErr }}
           </div>
         </div>
       </div>
@@ -45,8 +59,35 @@
 </template>
 
 <script>
-// Img, Price, Category, and a short Description, edit the Items Array to add a short Description of the Item
 export default {
   name: "ItemDetails",
+  data() {
+    return {
+      count: 1,
+      countErr: "",
+    };
+  },
+  methods: {
+    check() {
+      this.countErr = "";
+      if (this.count > this.$route.query.q) {
+        this.count = this.$route.query.q;
+      } else if (this.count < 1) {
+        this.count = 1;
+      }
+    },
+    decrement() {
+      this.countErr = "";
+      this.count > 1
+        ? this.count--
+        : (this.countErr = "Quantity cannot be less than 1...");
+    },
+    increment() {
+      this.countErr = "";
+      this.count < this.$route.query.q
+        ? this.count++
+        : (this.countErr = "Quantity has exceeded stock...");
+    },
+  },
 };
 </script>
