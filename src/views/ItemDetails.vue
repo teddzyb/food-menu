@@ -23,6 +23,7 @@
                       <i
                         @click="decrement"
                         class="bi bi-file-minus-fill text-dark"
+                        style="cursor: pointer"
                       ></i>
                     </h3>
                   </div>
@@ -39,6 +40,7 @@
                       <i
                         @click="increment"
                         class="bi bi-file-plus-fill text-dark"
+                        style="cursor: pointer"
                       ></i>
                     </h3>
                   </div>
@@ -54,6 +56,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="container text-center">
+      <router-link to="/" class="btn btn-dark mt-5">Go back</router-link>
     </div>
   </div>
 </template>
@@ -80,13 +85,13 @@ export default {
       this.countErr = "";
       this.count > 1
         ? this.count--
-        : (this.countErr = "Quantity cannot be less than 1...");
+        : (this.countErr = "Quantity cannot be less than 1!");
     },
     increment() {
       this.countErr = "";
       this.count < this.$route.query.q
         ? this.count++
-        : (this.countErr = "Quantity has exceeded stock...");
+        : (this.countErr = "Quantity has exceeded stock!");
     },
   },
 };
