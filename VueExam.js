@@ -2,7 +2,7 @@
 
 // 1.) ✔ Create a Menu View on the Main Page that displays all of the Items in the Menu.
 //1.1) ✔ Items in the Menu should be in a Card Component, it should display the Item Image, Item Price, and Item Name.
-//1.2) Each Card should have 1 button to redirect to the Items Details
+//1.2) ✔ Each Card should have 1 button to redirect to the Items Details
 //1.3) Items that have a quantity of 0 should not be displayed here
 
 // 2.) Create an Item Details View that display the Details of the Item such as Img, Price, Category, and a short Description, edit the Items Array to add a short Description of the Item
