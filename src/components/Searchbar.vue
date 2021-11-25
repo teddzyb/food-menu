@@ -8,7 +8,7 @@
             @input="searchFilter"
             class="form-control border-dark"
             type="search"
-            placeholder="Search an item name or category"
+            placeholder="Search an item name"
           />
           <button @click="searchFilter" class="btn btn-dark">Search</button>
         </div>

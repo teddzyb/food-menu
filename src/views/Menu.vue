@@ -1,7 +1,7 @@
 <template>
   <div class="container py-5">
     <div class="row justify-content-center align-items-center gy-5">
-      <Searchbar />
+      <Searchbar @search-filter="searchFilter" />
       <Card :key="item.id" v-for="item in available" :item="item" />
     </div>
   </div>
@@ -19,13 +19,26 @@ export default {
   },
   computed: {
     available: function () {
-      return this.items.filter(function (item) {
-        return item.quantity > 0;
-      });
+      return this.items
+        .filter(function (item) {
+          return item.quantity > 0;
+        })
+        .filter((item) => {
+          return item.name.indexOf(this.cap(this.searchVal)) > -1;
+        });
+    },
+  },
+  methods: {
+    searchFilter(value) {
+      this.searchVal = value;
+    },
+    cap(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
     },
   },
   data() {
     return {
+      searchVal: "",
       items: [
         {
           id: 1,
