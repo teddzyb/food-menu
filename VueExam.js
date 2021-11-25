@@ -5,8 +5,8 @@
 //1.2) ✔ Each Card should have 1 button to redirect to the Items Details
 //1.3) ✔ Items that have a quantity of 0 should not be displayed here
 
-// 2.) Create an Item Details View that display the Details of the Item such as Img, Price, Category, and a short Description, edit the Items Array to add a short Description of the Item
-//2.1) The Item Details Page should have one button to add the Item to the Cart.
+// 2.) ✔ Create an Item Details View that display the Details of the Item such as Img, Price, Category, and a short Description, edit the Items Array to add a short Description of the Item
+//2.1) ✔ The Item Details Page should have one button to add the Item to the Cart.
 //2.2) The Item Details Page should have 2 buttons to either increment or decrement the quantity of the item and an input box in the middle to input quantity
 //2.3) The quantity of the item should be reflected in the Cart
 //2.4) The quantity of the item should not go below 0, and should not go above the available quantity/stock of the item
