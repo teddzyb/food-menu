@@ -1,18 +1,21 @@
 <template>
   <div class="container my-5">
     <div class="row justify-content-center align-items-center gy-5">
+      <Searchbar />
       <Card :key="item.id" v-for="item in available" :item="item" />
     </div>
   </div>
 </template>
 
 <script>
+import Searchbar from "@/components/Searchbar.vue";
 import Card from "@/components/Card.vue";
 
 export default {
   name: "Menu",
   components: {
     Card,
+    Searchbar,
   },
   computed: {
     available: function () {
@@ -31,7 +34,7 @@ export default {
           quantity: 10,
           category: ["Meat"],
           img: "https://healthyrecipesblogs.com/wp-content/uploads/2018/01/oven-bacon-featured.jpg",
-          description: "Big fat juicy bacon to sate your deepest craving.",
+          description: "Big fat juicy bacon to satisfy your deepest craving.",
         },
         {
           id: 2,
