@@ -80,11 +80,11 @@ export default {
   methods: {
     addCart() {
       this.$emit("add-cart", {
-        name: this.$route.query.n,
-        price: this.$route.query.p,
-        quantity: this.$route.query.q,
-        img: this.$route.query.i,
-        orderQty: this.count,
+        n: this.$route.query.n,
+        p: this.$route.query.p,
+        q: this.$route.query.q,
+        i: this.$route.query.i,
+        o: this.count,
       });
     },
     check() {

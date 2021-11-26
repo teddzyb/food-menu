@@ -1,11 +1,11 @@
 <template>
-  <li class="list-group-item">
+  <li v-if="item != ''" class="list-group-item">
     <div class="container-fluid">
       <div class="row m-3">
         <div class="col row flex-column justify-content-between">
           <div class="row">
-            <h5>{{ item.name }}</h5>
-            <p>P{{ item.price }}.00</p>
+            <h5>{{ item.n }}</h5>
+            <p>P{{ item.p }}.00</p>
           </div>
           <div class="row">
             <div class="col-auto">
@@ -19,7 +19,7 @@
                     ></i>
                   </h3>
                 </div>
-                <div class="col-3">
+                <div class="col-4">
                   <input
                     v-model="count"
                     @input="check()"
@@ -37,9 +37,6 @@
                   </h3>
                 </div>
                 <div class="col-auto">
-                  <button class="btn btn-dark">Add to Cart</button>
-                </div>
-                <div class="col-auto">
                   <button class="btn btn-danger">Remove</button>
                 </div>
               </div>
@@ -47,11 +44,12 @@
           </div>
         </div>
         <div class="col-3">
-          <img class="img-fluid rounded-3" :src="item.img" />
+          <img class="img-fluid rounded-3" :src="item.i" />
         </div>
       </div>
     </div>
   </li>
+  <li class="list-group-item text-center my-5" v-else>Your cart is empty!</li>
 </template>
 
 <script>
@@ -59,6 +57,34 @@ export default {
   name: "CartItem",
   props: {
     item: Object,
+  },
+  data() {
+    return {
+      count: this.item.o,
+      countErr: "",
+    };
+  },
+  methods: {
+    check() {
+      this.countErr = "";
+      if (this.count > this.item.q) {
+        this.count = this.item.q;
+      } else if (this.count < 1) {
+        this.count = 1;
+      }
+    },
+    decrement() {
+      this.countErr = "";
+      this.count > 1
+        ? this.count--
+        : (this.countErr = "Quantity cannot be less than 1!");
+    },
+    increment() {
+      this.countErr = "";
+      this.count < this.item.q
+        ? this.count++
+        : (this.countErr = "Quantity has exceeded stock!");
+    },
   },
 };
 </script>

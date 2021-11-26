@@ -6,13 +6,7 @@
       </div>
       <ul class="list-group list-group-flush">
         <CartItem :key="item.id" v-for="item in items" :item="item" />
-        <li
-          class="list-group-item text-center my-5"
-          v-if="cartItems.length == 0"
-        >
-          Your cart is empty!
-        </li>
-        <li class="list-group-item m-4" v-else>
+        <li class="list-group-item m-4" v-if="items != ''">
           <h5 class="mb-4">Cart Total: P{{ total }}.00</h5>
           <p>Discounts:</p>
           <input
@@ -54,7 +48,7 @@ export default {
   computed: {
     items: function () {
       return this.cartItems.map((item) => {
-        return JSON.parse(item);
+        return item ? JSON.parse(item) : "";
       });
     },
   },
