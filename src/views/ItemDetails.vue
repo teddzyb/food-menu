@@ -45,7 +45,9 @@
                     </h3>
                   </div>
                   <div class="col-auto">
-                    <button class="btn btn-dark">Add to Cart</button>
+                    <button @click="addCart" class="btn btn-dark">
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               </div>
@@ -68,6 +70,7 @@
 <script>
 export default {
   name: "ItemDetails",
+  emits: ["add-cart"],
   data() {
     return {
       count: 1,
@@ -75,6 +78,15 @@ export default {
     };
   },
   methods: {
+    addCart() {
+      this.$emit("add-cart", {
+        name: this.$route.query.n,
+        price: this.$route.query.p,
+        quantity: this.$route.query.q,
+        img: this.$route.query.i,
+        orderQty: this.count,
+      });
+    },
     check() {
       this.countErr = "";
       if (this.count > this.$route.query.q) {

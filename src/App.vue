@@ -18,7 +18,12 @@
       </div>
       <div class="col-auto">
         <router-link
-          to="/cart"
+          :to="{
+            name: 'Cart',
+            query: {
+              cart: opCartDetails,
+            },
+          }"
           class="col-auto btn btn-light border-dark text-decoration-none"
           >Cart</router-link
         >
@@ -27,12 +32,32 @@
   </div>
 
   <!-- Menu -->
-  <router-view />
+  <router-view @add-cart="addCart" />
 </template>
 
 <script>
 export default {
   name: "App",
+  data() {
+    return {
+      cartDetails: [],
+    };
+  },
+  computed: {
+    opCartDetails: function () {
+      return this.cartDetails
+        .map((details) => {
+          return JSON.stringify(details);
+        })
+        .join("|");
+    },
+  },
+  methods: {
+    addCart(details) {
+      this.cartDetails.push(details);
+      console.log(this.cartDetails);
+    },
+  },
 };
 </script>
 
@@ -54,7 +79,8 @@ body {
   min-height: 100%;
   overflow: overlay;
 }
-.form-control:focus {
+.form-control:focus,
+.btn:focus {
   border-color: #212529;
   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
 }

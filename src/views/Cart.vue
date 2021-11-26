@@ -5,7 +5,7 @@
         My Cart
       </div>
       <ul class="list-group list-group-flush">
-        <CartItem :key="item.id" v-for="item in cartItems" :item="item" />
+        <CartItem :key="item.id" v-for="item in items" :item="item" />
         <li
           class="list-group-item text-center my-5"
           v-if="cartItems.length == 0"
@@ -48,18 +48,18 @@ export default {
   data() {
     return {
       total: 0,
-      cartItems: [
-        {
-          id: 1,
-          name: "Bacon",
-          price: 250,
-          quantity: 10,
-          category: ["Meat"],
-          img: "https://healthyrecipesblogs.com/wp-content/uploads/2018/01/oven-bacon-featured.jpg",
-          description: "Big fat juicy bacon to satisfy your deepest craving.",
-        },
-      ],
+      cartItems: [],
     };
+  },
+  computed: {
+    items: function () {
+      return this.cartItems.map((item) => {
+        return JSON.parse(item);
+      });
+    },
+  },
+  created() {
+    this.cartItems = this.$route.query.cart.split("|");
   },
 };
 </script>
