@@ -19,7 +19,7 @@
                     ></i>
                   </h3>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                   <input
                     v-model="count"
                     @input="check()"
@@ -38,6 +38,9 @@
                 </div>
                 <div class="col-auto">
                   <button class="btn btn-dark">Add to Cart</button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-danger">Remove</button>
                 </div>
               </div>
             </div>

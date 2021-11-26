@@ -30,7 +30,7 @@
             type="number"
             placeholder="Enter amount to pay"
           />
-          <button class="btn btn-dark">Proceed</button>
+          <button class="btn btn-dark mt-3">Proceed</button>
         </li>
       </ul>
     </div>
