@@ -79,8 +79,7 @@ body {
   min-height: 100%;
   overflow: overlay;
 }
-.form-control:focus,
-.btn:focus {
+.form-control:focus {
   border-color: #212529;
   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
 }

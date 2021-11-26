@@ -41,11 +41,21 @@ export default {
   },
   data() {
     return {
-      total: 0,
+      subtotal: 0,
       cartItems: [],
+      discount: 0,
+      cupoun: "",
+      paid: "",
     };
   },
   computed: {
+    total: function () {
+      let subtotal = 0;
+      this.items.forEach((item) => {
+        subtotal += item.p * item.o;
+      });
+      return subtotal - subtotal * this.discount;
+    },
     items: function () {
       return this.cartItems.map((item) => {
         return item ? JSON.parse(item) : "";
@@ -54,6 +64,19 @@ export default {
   },
   created() {
     this.cartItems = this.$route.query.cart.split("|");
+  },
+  methods: {
+    checkCoupon() {
+      if (this.coupon == "menu50") {
+        this.discount = 0.5;
+      } else if (this.coupon == "menu20") {
+        this.discount = 0.2;
+      } else if (this.coupon == "menu10") {
+        this.discount = 0.1;
+      } else {
+        this.discount = 0;
+      }
+    },
   },
 };
 </script>
