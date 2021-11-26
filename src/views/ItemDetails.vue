@@ -80,6 +80,7 @@ export default {
   methods: {
     addCart() {
       this.$emit("add-cart", {
+        id: this.$route.query.id,
         n: this.$route.query.n,
         p: this.$route.query.p,
         q: this.$route.query.q,

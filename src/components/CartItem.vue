@@ -40,7 +40,12 @@
                   </h3>
                 </div>
                 <div class="col-auto">
-                  <button class="btn btn-danger">Remove</button>
+                  <button
+                    @click="$emit('delete-item', item.id)"
+                    class="btn btn-danger"
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
             </div>

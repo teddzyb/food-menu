@@ -5,7 +5,12 @@
         My Cart
       </div>
       <ul class="list-group list-group-flush">
-        <CartItem :key="item.id" v-for="item in items" :item="item" />
+        <CartItem
+          @delete-item="deleteItem"
+          :key="item.id"
+          v-for="item in items"
+          :item="item"
+        />
         <li class="list-group-item m-4" v-if="items != ''">
           <h5 class="mb-4">Cart Total: P{{ total }}.00</h5>
           <p>Discounts:</p>
@@ -74,6 +79,13 @@ export default {
     this.cartItems = this.$route.query.cart.split("|");
   },
   methods: {
+    deleteItem(id) {
+      this.cartItems.forEach((item) => {
+        if (item.indexOf('{"id":"' + id) > -1) {
+          this.$emit("remove-item", item.indexOf('{"id":"' + id));
+        }
+      });
+    },
     checkCoupon() {
       if (this.coupon == "menu50") {
         this.discount = 0.5;

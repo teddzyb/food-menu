@@ -20,6 +20,7 @@
       </div>
       <div class="col-auto">
         <router-link
+          @remove-item="removeItem"
           :to="{
             name: 'Cart',
             query: {
@@ -55,6 +56,9 @@ export default {
     },
   },
   methods: {
+    removeItem(id) {
+      this.cartDetails.slice(id);
+    },
     addCart(details) {
       this.cartDetails.push(details);
       console.log(this.cartDetails);

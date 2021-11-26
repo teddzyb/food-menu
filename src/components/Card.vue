@@ -16,6 +16,7 @@
             name: 'ItemDetails',
             params: { pathname: item.id },
             query: {
+              id: item.id,
               n: item.name,
               p: item.price,
               c: item.category.join(', '),
