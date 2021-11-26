@@ -11,7 +11,10 @@
           v-for="item in items"
           :item="item"
         />
-        <li class="list-group-item m-4" v-if="items != ''">
+        <li
+          class="list-group-item m-4"
+          v-if="items != '' || this.checkout != ''"
+        >
           <h5 class="mb-4">Cart Total: P{{ total }}.00</h5>
           <p>Discounts:</p>
           <input
@@ -80,11 +83,7 @@ export default {
   },
   methods: {
     deleteItem(id) {
-      this.cartItems.forEach((item) => {
-        if (item.indexOf('{"id":"' + id) > -1) {
-          this.$emit("remove-item", item.indexOf('{"id":"' + id));
-        }
-      });
+      console.log(id);
     },
     checkCoupon() {
       if (this.coupon == "menu50") {
@@ -101,6 +100,8 @@ export default {
     checkPaid(total) {
       if (this.paid >= total) {
         this.checkout = "success";
+        this.$router.replace({ query: { cart: "" } });
+        this.cartItems = [];
       } else {
         this.checkout = "failure";
       }
