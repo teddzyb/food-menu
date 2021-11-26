@@ -1,16 +1,38 @@
 <template>
-  <Nav />
+  <!-- Nav Bar -->
+  <div class="container-fluid text-light px-5 py-4">
+    <div class="row">
+      <div class="col">
+        <h5 class="col-auto">
+          Food Menu<span class="text-secondary fs-6 fw-normal">
+            by Edwin Bartlett</span
+          >
+        </h5>
+      </div>
+      <div class="col-auto">
+        <router-link
+          to="/"
+          class="col-auto btn btn-light border-dark text-decoration-none"
+          >Menu</router-link
+        >
+      </div>
+      <div class="col-auto">
+        <router-link
+          to="/cart"
+          class="col-auto btn btn-light border-dark text-decoration-none"
+          >Cart</router-link
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu -->
   <router-view />
 </template>
 
 <script>
-import Nav from "@/components/Nav.vue";
-
 export default {
   name: "App",
-  components: {
-    Nav,
-  },
 };
 </script>
 

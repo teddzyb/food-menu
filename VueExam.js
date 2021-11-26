@@ -11,14 +11,14 @@
 //2.3) The quantity of the item should be reflected in the Cart
 //2.4) ✔ The quantity of the item should not go below 0, and should not go above the available quantity/stock of the item
 
-// 3.) Create a Cart View Page that displays all of the items the user has added to his Cart.
-//3.1) Each Item on the Cart should also be a component that displays the Items Image, Item Name, and Item Price
+// 3.) ✔ Create a Cart View Page that displays all of the items the user has added to their Cart.
+//3.1) ✔ Each Item on the Cart should also be a component that displays the Items Image, Item Name, and Item Price
 //3.2) Each Cart Item Card should have 2 buttons to increment or decrement the quantity of the item and an input box in the middle to input quantity
 //3.3) The total price of all the items should be reflected in the Cart
 //3.4) Display an Input at the bottom of the Cart that allows the user to input a coupon code and apply the discount to the total price
-//3.5) Display an Input at the bottom of the Cart that allows the user to input his money
+//3.5) Display an Input at the bottom of the Cart that allows the user to input their money
 //3.6) Display a button at the bottom of the Cart that allows the user to checkout
-//3.7) Pressing the checkout button should first check if the user has enough money, if he does not it should display an error message. If Users money is enough for the total price, it should display a success message and clear out the cart
+//3.7) Pressing the checkout button should first check if the user has enough money, if they do not it should display an error message. If Users money is enough for the total price, it should display a success message and clear out the cart
 //3.8) Each Cart Item Card should have a button to remove the item from the Cart    
 
 //Notes:

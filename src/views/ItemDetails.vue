@@ -58,7 +58,9 @@
       </div>
     </div>
     <div class="container text-center">
-      <router-link to="/" class="btn btn-dark mt-5">Go back</router-link>
+      <router-link to="/" class="btn btn-light border-dark mt-5"
+        >Go back</router-link
+      >
     </div>
   </div>
 </template>

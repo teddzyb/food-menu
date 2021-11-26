@@ -1,5 +1,5 @@
 <template>
-  <div class="card border-dark col-sm-3 text-center mx-4 px-0">
+  <div class="card border-dark col-md-3 text-center mx-4 px-0">
     <img
       :src="item.img"
       class="card-img-top"
