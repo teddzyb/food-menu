@@ -13,8 +13,8 @@
 
 // 3.) ✔ Create a Cart View Page that displays all of the items the user has added to their Cart.
 //3.1) ✔ Each Item on the Cart should also be a component that displays the Items Image, Item Name, and Item Price
-//3.2) Each Cart Item Card should have 2 buttons to increment or decrement the quantity of the item and an input box in the middle to input quantity
-//3.3) The total price of all the items should be reflected in the Cart
+//3.2) ✔ Each Cart Item Card should have 2 buttons to increment or decrement the quantity of the item and an input box in the middle to input quantity
+//3.3) ✔ The total price of all the items should be reflected in the Cart
 //3.4) Display an Input at the bottom of the Cart that allows the user to input a coupon code and apply the discount to the total price
 //3.5) Display an Input at the bottom of the Cart that allows the user to input their money
 //3.6) Display a button at the bottom of the Cart that allows the user to checkout
