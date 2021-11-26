@@ -19,12 +19,19 @@
           <p>Checkout:</p>
           <input
             v-model="paid"
-            @input="checkPaid()"
             class="form-control mb-3"
             type="number"
             placeholder="Enter amount to pay"
           />
-          <button class="btn btn-dark mt-3">Proceed</button>
+          <button @click="checkPaid(total)" class="btn btn-dark mt-3">
+            Proceed
+          </button>
+          <p v-if="checkout == 'success'" class="text-success mt-4">
+            Successfully ordered!
+          </p>
+          <p v-if="checkout == 'failure'" class="text-danger mt-4">
+            Insufficient balance!
+          </p>
         </li>
       </ul>
     </div>
@@ -46,6 +53,7 @@ export default {
       discount: 0,
       cupoun: "",
       paid: "",
+      checkout: "",
     };
   },
   computed: {
@@ -75,6 +83,14 @@ export default {
         this.discount = 0.1;
       } else {
         this.discount = 0;
+      }
+      // Add 'menu200flat' discount
+    },
+    checkPaid(total) {
+      if (this.paid >= total) {
+        this.checkout = "success";
+      } else {
+        this.checkout = "failure";
       }
     },
   },
