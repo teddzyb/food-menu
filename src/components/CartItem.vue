@@ -1,8 +1,11 @@
 <template>
   <li v-if="item != ''" class="list-group-item">
     <div class="container-fluid">
-      <div class="row m-3">
-        <div class="col row flex-column justify-content-between">
+      <div class="row flex-row-reverse m-3">
+        <div class="col-md-3">
+          <img class="img-fluid rounded-3" :src="item.i" />
+        </div>
+        <div class="col-sm d-flex flex-column justify-content-between">
           <div class="row">
             <h5>{{ item.n }}</h5>
             <p>P{{ item.p }}.00</p>
@@ -42,9 +45,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-3">
-          <img class="img-fluid rounded-3" :src="item.i" />
         </div>
       </div>
     </div>

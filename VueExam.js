@@ -18,7 +18,7 @@
 //3.4) ✔ Display an Input at the bottom of the Cart that allows the user to input a coupon code and apply the discount to the total price
 //3.5) ✔ Display an Input at the bottom of the Cart that allows the user to input their money
 //3.6) ✔ Display a button at the bottom of the Cart that allows the user to checkout
-//3.7) Pressing the checkout button should first check if the user has enough money, if they do not it should display an error message. If Users money is enough for the total price, it should display a success message and clear out the cart
+//3.7) ✔ Pressing the checkout button should first check if the user has enough money, if they do not it should display an error message. If Users money is enough for the total price, it should display a success message and clear out the cart
 //3.8) ✔ Each Cart Item Card should have a button to remove the item from the Cart    
 
 //Notes:

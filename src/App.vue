@@ -3,16 +3,18 @@
   <div class="container-fluid text-light px-5 py-4">
     <div class="row">
       <div class="col">
-        <h5 class="col-auto">
-          Food Menu<span class="text-secondary fs-6 fw-normal">
-            by Edwin Bartlett</span
-          >
-        </h5>
+        <router-link to="/" class="text-decoration-none text-light">
+          <h5 class="col-auto">
+            Food Menu<span class="text-secondary fs-6 fw-normal">
+              by Edwin Bartlett</span
+            >
+          </h5>
+        </router-link>
       </div>
       <div class="col-auto">
         <router-link
           to="/"
-          class="col-auto btn btn-light border-dark text-decoration-none"
+          class="col-auto btn btn-light border-dark py-1 text-decoration-none"
           >Menu</router-link
         >
       </div>
@@ -24,7 +26,7 @@
               cart: opCartDetails,
             },
           }"
-          class="col-auto btn btn-light border-dark text-decoration-none"
+          class="col-auto btn btn-light border-dark py-1 text-decoration-none"
           >Cart</router-link
         >
       </div>
