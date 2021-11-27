@@ -7,6 +7,8 @@
       <ul class="list-group list-group-flush">
         <CartItem
           @delete-item="deleteItem"
+          @add-price="alterPrice"
+          @subtract-price="alterPrice"
           :key="item.id"
           v-for="item in items"
           :item="item"
@@ -56,12 +58,13 @@ export default {
   },
   data() {
     return {
-      subtotal: 0,
       cartItems: [],
+      subtotal: 0,
       discount: 0,
       cupoun: "",
       paid: "",
       checkout: "",
+      alter: 0,
     };
   },
   computed: {
@@ -70,6 +73,9 @@ export default {
       this.items.forEach((item) => {
         subtotal += item.p * item.o;
       });
+      if (this.alter != 0) {
+        subtotal += this.alter;
+      }
       return subtotal - subtotal * this.discount;
     },
     items: function () {
@@ -82,6 +88,10 @@ export default {
     this.cartItems = this.$route.query.cart.split("|");
   },
   methods: {
+    // Buggy
+    alterPrice(amount) {
+      this.alter += amount;
+    },
     deleteItem(id) {
       console.log(id);
     },

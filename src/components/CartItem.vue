@@ -63,6 +63,7 @@ export default {
   props: {
     item: Object,
   },
+  emits: ["subtract-price", "add-price", "delete-item"],
   data() {
     return {
       count: this.item.o,
@@ -83,12 +84,14 @@ export default {
       this.count > 1
         ? this.count--
         : (this.countErr = "Quantity cannot be less than 1!");
+      this.$emit("subtract-price", -(this.item.p * (this.count - this.item.o)));
     },
     increment() {
       this.countErr = "";
       this.count < this.item.q
         ? this.count++
         : (this.countErr = "Quantity has exceeded stock!");
+      this.$emit("add-price", this.item.p * (this.count - this.item.o));
     },
   },
 };
