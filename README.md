@@ -32,4 +32,4 @@ npm run serve
 </p>
 
 ## Project Status
-Completed on Novebmber 27, 2021.
+Completed on November 27, 2021.
